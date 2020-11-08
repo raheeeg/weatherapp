@@ -1,0 +1,99 @@
+.container,
+.five-day {
+  max-width: 600px;
+  padding: 0;
+  margin: 0 auto;
+  background-color: #eeecda;
+}
+
+body {
+  max-width: 600px;
+  margin: 0 auto;
+}
+.enter-city {
+  display: inline;
+}
+
+button {
+  display: inline;
+  max-width: 200px;
+}
+
+.card,
+.card-body {
+  max-width: 600px;
+  color: #f08a5d;
+  padding: 0;
+  font-family: "Commissioner", sans-serif;
+}
+
+.summary {
+  background-image: url(images/sun.jpg);
+}
+
+.enter-city,
+.detailed,
+.table {
+  background-color: #eeecda;
+}
+
+.weather-app {
+  margin-top: 40px;
+  border: 3px solid;
+  max-width: 600px;
+}
+
+.summary-text {
+  color: #6a2c70;
+  font-weight: 900;
+}
+
+.temp-low,
+.temp-high,
+.current-date-time,
+.sun {
+  text-align: right;
+}
+
+.unit {
+  font-size: 20px;
+}
+
+.current-date-time {
+  margin-top: 10px;
+}
+
+.temp-current {
+  font-size: 70px;
+}
+
+.col-4,
+.col-8 {
+  padding: 0;
+}
+
+.current-city {
+  text-align: left;
+  font-size: 30px;
+}
+
+.table {
+  padding: 0;
+  color: #f08a5d;
+  font-family: "Commissioner", sans-serif;
+}
+
+.day {
+  width: 120px;
+  text-align: center;
+}
+
+.temp-current,
+.table td {
+  padding: 0;
+  text-align: center;
+}
+
+.icon {
+  font-size: 50px;
+}
