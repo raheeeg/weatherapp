@@ -14,6 +14,16 @@ body {
   display: inline;
 }
 
+.city-input {
+  width: 250px;
+  line-height: 30px;
+}
+
+.current-location {
+  font-size: 16px;
+  height: 40px;
+}
+
 button {
   display: inline;
   max-width: 200px;
@@ -25,6 +35,16 @@ button {
   color: #f08a5d;
   padding: 0;
   font-family: "Commissioner", sans-serif;
+  border-radius: 0%;
+}
+
+.summary,
+.detailed {
+  border: 0;
+}
+
+.five-day {
+  border: 1px 0 0 0;
 }
 
 .summary {
