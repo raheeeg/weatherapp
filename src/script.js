@@ -31,18 +31,10 @@ function showTemp(response) {
   document.querySelector("#humidity").innerHTML = response.data.main.humidity;
   document.querySelector("#wind-speed").innerHTML = Math.round(response.data.wind.speed);
   console.log(response.data);
-  
 }
 
-function changeStyle(weather) {
-  if (response.data.weather[0].main === "Clouds") {
- //   document.getElementById("#summary").style.backgroundImage = url(images/rain.jpg);
-     alert("HI!");
-  }
-}
-
+let apiKey = "14aa63322308690f6e8ffb6257ee41e5";
 function searchCity(city) {
-  let apiKey = "14aa63322308690f6e8ffb6257ee41e5";
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
   axios.get(apiUrl).then(showTemp);
 }
@@ -54,22 +46,26 @@ function handleSubmit(event) {
   searchCity(city);
 }
 
+
 function seachLocation(position) {
-  let apiKey = "14aa63322308690f6e8ffb6257ee41e5";
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?qlat=${position.coords.latitude}&lon=${position.coords.longitude}&appid=${apiKey}&units=metric`;
   axios.get(apiUrl).then(showTemp);
+  console.log(position);
 }
 
 let searchForm = document.querySelector("#search-form");
 searchForm.addEventListener("submit", handleSubmit);
 
-function currentLocation(event) {
-  event.preventDefault();
-  navigator.geolocation.getCurrentPosition(searchLocation);  
+function getLocation(position) {
+  let latitude = position.coords.latitude;
+  let longitude = position.coords.longitude;
+  let apiUrl = `https://api.openweathermap.org.data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${apiKey}&unit=metric`;
+  axios.get(apiUrl).then(showTemp);
 }
 
+navigator.geolocation.getCurrentPosition(getLocation);
 let locationSearch = document.querySelector("#current-location");
-locationSearch.addEventListener("click", currentLocation);
+locationSearch.addEventListener("click", getLocation);
 
 
 
@@ -111,27 +107,8 @@ farenheit.addEventListener("click", convertToFarenheit);
 
 let celcius = document.querySelector("#celcius");
 celcius.addEventListener("click", convertToCelcius);
-//function farenheit(event) {
-  //event.preventDefault();
-  //let unit = "imperial";
-//}
 
-//let conversionLink = document.querySelector("#farenheit");
-//conversionLink.addEventListener("click", farenheit);
-
-
-
-
-//function celcius(event) {
-  //event.preventDefault();
-  //let currentTemp = document.querySelector(".temperature");
-  //currentTemp.innerHTML = 20;
-//}
-
-//let revert = document.querySelector("#celcius");
-//revert.addEventListener("click", celcius);
-
-searchCity("Liverpool");
+searchCity("Paris");
 
 
 

@@ -43,6 +43,10 @@ button {
   border: 0;
 }
 
+#weather-description {
+  text-transform: capitalize;
+}
+
 .five-day {
   border: 1px 0px 0px 0px;
 }
