@@ -25,7 +25,7 @@
         
 
     <div class="card summary" id="summary">
-        <div class="card-body">
+        <div class="card-body" id = "summary-text">
             <div class="row">
             <div class="summary-text temp-low col-8"><span id="temp-low"></span></div>
             <div class="summary-text temp-current col-3"><span class="temperature" id="temperature"></span><span class="unit float-right"><a href="#" class = "active" id="celcius">°C</a>|<a href="#" id="farenheit">°F</a></span></div>
@@ -36,59 +36,59 @@
         </div>
     </div>
 
-    <div class="card detailed">
+    <div class="card detailed" id = "detailed">
         <div class="row">
             <div class="weather col-6">
                 <span id="weather-description">Sunny, patchy clouds</span><br />Humidity: <span id="humidity">10</span>%<br />Wind: <span id="wind-speed">2</span>mph
             </div>
             <div class="sun col-6">
-                Sunrise: 06:57<br />Solar noon: 12:50<br />Sunser: 18:48
+                Sunrise: 06:57<br />Solar noon: 12:50<br />Sunset: 18:48
             </div>
         </div>
     </div>
 
-    <div class="card five-day">
-    <table class="table table-borderless">
+    <div class="card five-day" id = "five-day">
+    <table class="table table-borderless" id = "table">
         <thead>
             <tr>
-                <th class="col day">
+                <th class="col day" id="day-one">
                     Tomorrow
                 </th>
-                <th class="col day">
+                <th class="col day"id="day-two">
                     Sunday
                 </th>
-                <th class="col day">
+                <th class="col day" id="day-three">
                     Monday
                 </th>
-                <th class="col day">
+                <th class="col day" id="day-four">
                     Tuesday
                 </th>
-                <th class="col day">
+                <th class="col day" id="day-five">
                     Wednesday
                 </th>
             </tr>
         </thead>
         <tbody>
             <tr>
-                <td>25°C</td>
-                <td>20°C</td>
-                <td>15°C</td>
-                <td>2°C</td>
-                <td>6°C</td>                </td>
+                <td id = "day-one-high">25°C</td>
+                <td id = "day-two-high">20°C</td>
+                <td id = "day-three-high">15°C</td>
+                <td id = "day-four-high">2°C</td>
+                <td id = "day-five-high">6°C</td>
             </tr>
             <tr>
-                <td><i class="fas fa-sun icon"></i></td>
-                <td><i class="fas fa-cloud icon"></i></td>
-                <td><i class="fas fa-cloud-sun-rain icon"></i></td>
-                <td><i class="fas fa-cloud-showers-heavy icon"></i></td>
-                <td><i class="far fa-snowflake icon"></i></td>
+                <td><i class="fas fa-sun icon" id = "day-one-icon"></i></td>
+                <td><i class="fas fa-cloud icon" id = "day-two-icon"></i></td>
+                <td><i class="fas fa-cloud-sun-rain icon" id = "day-three-icon"></i></td>
+                <td><i class="fas fa-cloud-showers-heavy icon" id = "day-four-icon"></i></td>
+                <td><i class="far fa-snowflake icon" id = "day-five-icon"></i></td>
             </tr>
             <tr>
-                <td>10°C</td>
-                <td>7°C</td>
-                <td>5°C</td>
-                <td>-3°C</td>
-                <td>1°C</td>
+                <td id = "day-one-low">10°C</td>
+                <td id = "day-two-low">7°C</td>
+                <td id = "day-three-low">5°C</td>
+                <td id = "day-four-low">-3°C</td>
+                <td id = "day-five-low">1°C</td>
                 </td>
             </tr>
         </tbody>
