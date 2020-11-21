@@ -36,15 +36,27 @@ function showTemp(response) {
 
 function showForecast(response) {
   let dayOneHigh = document.querySelector("#day-one-high");
-  dayOneHigh.innerHTML = response.data.list[8];
+  dayOneHigh.innerHTML = `${Math.round(response.data.list[7].main.temp_max)}°C`;
   let dayTwoHigh = document.querySelector("#day-two-high");
-  dayTwoHigh.innerHTML = response.data.list[8];
+  dayTwoHigh.innerHTML = `${Math.round(response.data.list[15].main.temp_max)}°C`;
   let dayThreeHigh = document.querySelector("#day-three-high");
-  dayThreeHigh.innerHTML = response.data.list[8];
+  dayThreeHigh.innerHTML = `${Math.round(response.data.list[23].main.temp_max)}°C`;
   let dayFourHigh = document.querySelector("#day-four-high");
-  dayFourHigh.innerHTML = response.data.list[8];
+  dayFourHigh.innerHTML = `${Math.round(response.data.list[31].main.temp_max)}°C`;
   let dayFiveHigh = document.querySelector("#day-five-high");
-  dayFiveHigh.innerHTML = response.data.list[8];
+  dayFiveHigh.innerHTML = `${Math.round(response.data.list[39].main.temp_max)}°C`;
+
+  let dayOneLow = document.querySelector("#day-one-low");
+  dayOneLow.innerHTML = `${Math.round(response.data.list[7].main.temp_min)}°C`;
+  let dayTwoLow = document.querySelector("#day-two-low");
+  dayTwoLow.innerHTML = `${Math.round(response.data.list[15].main.temp_min)}°C`;
+  let dayThreeLow = document.querySelector("#day-three-low");
+  dayThreeLow.innerHTML = `${Math.round(response.data.list[23].main.temp_min)}°C`;
+  let dayFourLow = document.querySelector("#day-four-low");
+  dayFourLow.innerHTML = `${Math.round(response.data.list[31].main.temp_min)}°C`;
+  let dayFiveLow = document.querySelector("#day-five-low");
+  dayFiveLow.innerHTML = `${Math.round(response.data.list[39].main.temp_min)}°C`;
+
   console.log(response.data.list);
 }
 
