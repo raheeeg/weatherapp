@@ -13,7 +13,7 @@
 </head>
 <link rel="stylesheet" href="src/style.css">
 <body>
-    <div class="container">
+    <div class="container" id="weather-app">
         <div class="card weather-app col-6">
         <form class="enter-city" id="search-form">
             <input type="text" class="city-input" id="city-input" placeholder="🔎 Type city name here..." />
@@ -24,11 +24,11 @@
         </form>
         
 
-    <div class="card summary">
+    <div class="card summary" id="summary">
         <div class="card-body">
             <div class="row">
             <div class="summary-text temp-low col-8"><span id="temp-low"></span></div>
-            <div class="summary-text temp-current col-3"><span class="temperature" id="temperature"></span><span class="unit float-right"><a href="#" id="celcius">°C</a>|<a href="#" id="farenheit">°F</a></span></div>
+            <div class="summary-text temp-current col-3"><span class="temperature" id="temperature"></span><span class="unit float-right"><a href="#" class = "active" id="celcius">°C</a>|<a href="#" id="farenheit">°F</a></span></div>
             <div class="summary-text temp-high col-8"><span id="temp-high"></span></div>
             <div class="summary-text current-city col-6"></div>
             <div class="summary-text current-date-time col-6">Day Date, Time</div>

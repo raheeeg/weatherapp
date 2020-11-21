@@ -21,13 +21,24 @@ dateTime();
 
 function showTemp(response) {
   document.querySelector(".current-city").innerHTML = response.data.name;
-  document.querySelector("#temperature").innerHTML = Math.round(response.data.main.temp);
-  document.querySelector("#temp-low").innerHTML = Math.round(response.data.main.temp_min);
-  document.querySelector("#temp-high").innerHTML = Math.round(response.data.main.temp_max);
+  celciusTemp = response.data.main.temp;
+  document.querySelector("#temperature").innerHTML = Math.round(celciusTemp);
+  lowCelcius = response.data.main.temp_min;
+  document.querySelector("#temp-low").innerHTML = Math.round(lowCelcius);
+  highCelcius = response.data.main.temp_max;
+  document.querySelector("#temp-high").innerHTML = Math.round(highCelcius);
   document.querySelector("#weather-description").innerHTML = response.data.weather[0].description;
   document.querySelector("#humidity").innerHTML = response.data.main.humidity;
   document.querySelector("#wind-speed").innerHTML = Math.round(response.data.wind.speed);
   console.log(response.data);
+  
+}
+
+function changeStyle(weather) {
+  if (response.data.weather[0].main === "Clouds") {
+ //   document.getElementById("#summary").style.backgroundImage = url(images/rain.jpg);
+     alert("HI!");
+  }
 }
 
 function searchCity(city) {
@@ -60,9 +71,46 @@ function currentLocation(event) {
 let locationSearch = document.querySelector("#current-location");
 locationSearch.addEventListener("click", currentLocation);
 
-searchCity("Liverpool");
 
 
+function convertToFarenheit(event) {
+  event.preventDefault();
+  let tempFarenheit = Math.round((celciusTemp * 9) / 5 + 32);
+  let lowTempFarenheit = Math.round((lowCelcius * 9) / 5 + 32);
+  let highTempFarenheit = Math.round((highCelcius * 9) / 5 + 32);
+  let tempertureElement = document.querySelector("#temperature");
+  let lowTempElement = document.querySelector("#temp-low");
+  let highTempElement = document.querySelector("#temp-high");
+  celcius.classList.remove("active");
+  farenheit.classList.add("active");
+  tempertureElement.innerHTML = tempFarenheit;
+  lowTempElement.innerHTML = lowTempFarenheit;
+  highTempElement.innerHTML = highTempFarenheit;
+}
+
+function convertToCelcius(event) {
+  event.preventDefault();
+  let tempertureElement = document.querySelector("#temperature");
+  let lowTempCelcius = lowCelcius;
+  let highTempCelsuis = highCelcius;
+  let lowTempElement = document.querySelector("#temp-low");
+  let highTempElement = document.querySelector("#temp-high");
+  celcius.classList.add("active");
+  farenheit.classList.remove("active");
+  tempertureElement.innerHTML = Math.round(celciusTemp);
+  lowTempElement.innerHTML = Math.round(lowCelcius);
+  highTempElement.innerHTML = Math.round(highCelcius);
+}
+
+let celciusTemp = null;
+let lowCelcius = null;
+let highCelcius = null;
+
+let farenheit = document.querySelector("#farenheit");
+farenheit.addEventListener("click", convertToFarenheit);
+
+let celcius = document.querySelector("#celcius");
+celcius.addEventListener("click", convertToCelcius);
 //function farenheit(event) {
   //event.preventDefault();
   //let unit = "imperial";
@@ -83,7 +131,7 @@ searchCity("Liverpool");
 //let revert = document.querySelector("#celcius");
 //revert.addEventListener("click", celcius);
 
-
+searchCity("Liverpool");
 
 
 

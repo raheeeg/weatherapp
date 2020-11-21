@@ -3,7 +3,7 @@
   max-width: 600px;
   padding: 0;
   margin: 0 auto;
-  background-color: #eeeded;
+  background-color: #98a8b2;
 }
 
 body {
@@ -32,7 +32,7 @@ button {
 .card,
 .card-body {
   max-width: 600px;
-  color: #5c6e91;
+  color: #1c2b2d;
   padding: 0;
   font-family: "Commissioner", sans-serif;
   border-radius: 0%;
@@ -47,14 +47,14 @@ button {
   border: 1px 0px 0px 0px;
 }
 
-#summary {
-  background-image: url(images/clouds.jpg);
+.summary {
+  background-image: url(images/snow.jpg);
 }
 
 .enter-city,
 .detailed,
 .table {
-  background-color: #eeeded;
+  background-color: #98a8b2;
 }
 
 .weather-app {
@@ -64,7 +64,7 @@ button {
 }
 
 .summary-text {
-  color: #5c6e91;
+  color: #1c2b2d;
   font-weight: 900;
 }
 
@@ -99,7 +99,7 @@ button {
 
 .table {
   padding: 0;
-  color: #5c6e91;
+  color: #1c2b2d;
   font-family: "Commissioner", sans-serif;
 }
 
@@ -116,13 +116,4 @@ button {
 
 .icon {
   font-size: 50px;
-}
-
-.temp-current .active {
-  color: #5c6e91;
-  cursor: default;
-}
-
-.temp-current .active:hover {
-  text-decoration: none;
 }
