@@ -43,25 +43,17 @@ function showTemp(response) {
   document.querySelector("#wind-speed").innerHTML = Math.round(response.data.wind.speed);
   document.querySelector("#sunrise").innerHTML = response.data.sys.sunrise;
   document.querySelector("#sunset").innerHTML = response.data.sys.sunset;
-  let summary = document.querySelector("#summary");
-  if (response.data.weather[0].main === "Sunny") {
-    summary.setAttribute(
-      "src",
-      `images/sun.jpg`
-    );
-    }
-  if (response.data.weather[0].main === "Rain" || "Drizzle" || "Thunderstorm") {
-  summary.setAttribute(
-     "src",
-     `images/rain.jpg`
-   );
+  if (response.data.weather[0].main === "Sun") {
+    document.querySelector("#summary").style.backgroundImage = "url(src/images/sun.jpg)";
   }
-   if (response.data.weather[0].main === "Snow") {
-   summary.setAttribute(
-     "src",
-     `images/snow.jpg`
-  );
-
+  if (response.data.weather[0].main === "Rain" || "Drizzle" || "Thunderstorm") {
+    document.querySelector("#summary").style.backgroundImage = "url(src/images/rain.jpg)";
+  }
+  if (response.data.weather[0].main === "Snow") {
+     document.querySelector("#summary").style.backgroundImage = "url(src/images/snow.jpg)";
+  }
+  if (response.data.weather[0].main === "Clear") {
+    document.querySelector("#summary").style.backgroundImage = "url(src/images/clear.jpg)";
   }
 
   console.log(response.data);
