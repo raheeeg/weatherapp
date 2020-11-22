@@ -64,7 +64,6 @@ function showTemp(response) {
   if (response.data.weather[0].main === "Clear") {
     document.querySelector("#summary").style.backgroundImage = "url(src/images/clear.jpg)";
   }
-  console.log(response.data);
 }
 
 function showForecast(response) {
