@@ -3,7 +3,7 @@
   max-width: 600px;
   padding: 0;
   margin: 0 auto;
-  background-color: #eeeded;
+  background-color: #bce6eb;
 }
 
 body {
@@ -32,7 +32,7 @@ button {
 .card,
 .card-body {
   max-width: 600px;
-  color: #5c6e91;
+  color: #120078;
   padding: 0;
   font-family: "Commissioner", sans-serif;
   border-radius: 0%;
@@ -58,7 +58,7 @@ button {
 .enter-city,
 .detailed,
 .table {
-  background-color: #eeeded;
+  background-color: #bce6eb;
 }
 
 .weather-app {
@@ -68,7 +68,7 @@ button {
 }
 
 .summary-text {
-  color: #5c6e91;
+  color: #120078;
   font-weight: 900;
 }
 
@@ -103,7 +103,7 @@ button {
 
 .table {
   padding: 0;
-  color: #5c6e91;
+  color: #120078;
   font-family: "Commissioner", sans-serif;
 }
 
@@ -123,7 +123,7 @@ button {
 }
 
 .temp-current .active {
-  color: #5c6e91;
+  color: #120078;
   cursor: default;
 }
 
