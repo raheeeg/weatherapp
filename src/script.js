@@ -24,8 +24,8 @@ let dayFive = document.querySelector("#day-five");
 dayFive.innerHTML = days[now.getDay()+5];
 
 
-  let  displayDate = document.querySelector(".current-date-time");
-  displayDate.innerHTML = `${currentDay} ${currentDate}, ${currentHour}:${currentMin}`;
+let  displayDate = document.querySelector(".current-date-time");
+displayDate.innerHTML = `${currentDay} ${currentDate}, ${currentHour}:${currentMin}`;
 }
 
 dateTime();
@@ -41,6 +41,30 @@ function showTemp(response) {
   document.querySelector("#weather-description").innerHTML = response.data.weather[0].description;
   document.querySelector("#humidity").innerHTML = response.data.main.humidity;
   document.querySelector("#wind-speed").innerHTML = Math.round(response.data.wind.speed);
+  document.querySelector("#sunrise").innerHTML = response.data.sys.sunrise;
+  document.querySelector("#sunset").innerHTML = response.data.sys.sunset;
+  let summary = document.querySelector("#summary");
+  if (response.data.weather[0].main === "Sunny") {
+    summary.setAttribute(
+      "src",
+      `images/sun.jpg`
+    );
+    }
+  if (response.data.weather[0].main === "Rain" || "Drizzle" || "Thunderstorm") {
+  summary.setAttribute(
+     "src",
+     `images/rain.jpg`
+   );
+  }
+   if (response.data.weather[0].main === "Snow") {
+   summary.setAttribute(
+     "src",
+     `images/snow.jpg`
+  );
+
+  }
+
+  console.log(response.data);
 }
 
 function showForecast(response) {
@@ -86,10 +110,6 @@ function showForecast(response) {
   dayFiveIcon.setAttribute(
     "src",
     `http://openweathermap.org/img/wn/${response.data.list[39].weather[0].icon}@2x.png`);
-
-
-
-  console.log(response.data.list);
 }
 
 let apiKey = "14aa63322308690f6e8ffb6257ee41e5";
