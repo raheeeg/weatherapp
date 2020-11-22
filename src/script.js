@@ -15,13 +15,13 @@ if (currentMin < 10) {
 }
 
 let dayTwo = document.querySelector("#day-two");
-dayTwo.innerHTML = days[now.getDay()+1];
+dayTwo.innerHTML = days[now.getDay()+2];
 let dayThree = document.querySelector("#day-three");
-dayThree.innerHTML = days[now.getDay()+2];
+dayThree.innerHTML = days[now.getDay()+3];
 let dayFour = document.querySelector("#day-four");
-dayFour.innerHTML = days[now.getDay()+3];
+dayFour.innerHTML = days[now.getDay()+4];
 let dayFive = document.querySelector("#day-five");
-dayFive.innerHTML = days[now.getDay()+4];
+dayFive.innerHTML = days[now.getDay()+5];
 
 
   let  displayDate = document.querySelector(".current-date-time");
