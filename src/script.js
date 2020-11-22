@@ -74,15 +74,15 @@ function showTemp(response) {
   document.querySelector("#sunrise").innerHTML = `${sunriseHour}:${sunriseMinutes}`;
   
   let sunset = new Date(response.data.sys.sunset * 1000);
-  let sunsetHour = sunrise.getUTCHours();
-  let sunsetMinutes = sunrise.getUTCMinutes();
+  let sunsetHour = sunset.getUTCHours();
+  let sunsetMinutes = sunset.getUTCMinutes();
   if (sunsetHour < 10) {
     sunsetHour = `0${sunsetHour}`;
   }
   if (sunsetMinutes < 10) {
     sunsetMinutes = `0${sunsetMinutes}`;
   }
-  document.querySelector("#sunrise").innerHTML = `${sunsetHour}:${sunsetMinutes}`;
+  document.querySelector("#sunset").innerHTML = `${sunsetHour}:${sunsetMinutes}`;
 }
 
 function showForecast(response) {
