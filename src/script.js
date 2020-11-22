@@ -1,7 +1,6 @@
 
-let now = new Date();
-
 function dateTime() {
+let now = new Date();
 let days = ["Sunday", "Monday", "Tueday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday", "Monday", "Tueday", "Wednesday", "Thursday", "Friday", "Saturday"];
 let currentDay = days[now.getDay()];
 let currentDate = now.getDate();
@@ -41,8 +40,6 @@ function showTemp(response) {
   document.querySelector("#weather-description").innerHTML = response.data.weather[0].description;
   document.querySelector("#humidity").innerHTML = response.data.main.humidity;
   document.querySelector("#wind-speed").innerHTML = Math.round(response.data.wind.speed);
-  document.querySelector("#sunrise").innerHTML = response.data.sys.sunrise;
-  document.querySelector("#sunset").innerHTML = response.data.sys.sunset;
   if (response.data.weather[0].main === "Clouds") {
     document.querySelector("#summary").style.backgroundImage = "url(src/images/clouds.jpg)";
   }
@@ -64,6 +61,28 @@ function showTemp(response) {
   if (response.data.weather[0].main === "Clear") {
     document.querySelector("#summary").style.backgroundImage = "url(src/images/clear.jpg)";
   }
+
+  let sunrise = new Date(response.data.sys.sunrise * 1000);
+  let sunriseHour = sunrise.getUTCHours();
+  let sunriseMinutes = sunrise.getUTCMinutes();
+  if (sunriseHour < 10) {
+    sunriseHour = `0${sunriseHour}`;
+  }
+  if (sunriseMinutes < 10) {
+    sunriseMinutes = `0${sunriseMinutes}`;
+  }
+  document.querySelector("#sunrise").innerHTML = `${sunriseHour}:${sunriseMinutes}`;
+  
+  let sunset = new Date(response.data.sys.sunset * 1000);
+  let sunsetHour = sunrise.getUTCHours();
+  let sunsetMinutes = sunrise.getUTCMinutes();
+  if (sunsetHour < 10) {
+    sunsetHour = `0${sunsetHour}`;
+  }
+  if (sunsetMinutes < 10) {
+    sunsetMinutes = `0${sunsetMinutes}`;
+  }
+  document.querySelector("#sunrise").innerHTML = `${sunsetHour}:${sunsetMinutes}`;
 }
 
 function showForecast(response) {
