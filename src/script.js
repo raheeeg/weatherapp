@@ -2,7 +2,7 @@
 let now = new Date();
 
 function dateTime() {
-let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+let days = ["Sunday", "Monday", "Tueday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday", "Monday", "Tueday", "Wednesday", "Thursday", "Friday", "Saturday"];
 let currentDay = days[now.getDay()];
 let currentDate = now.getDate();
 let currentHour = now.getHours();
@@ -13,6 +13,15 @@ let currentMin = now.getMinutes();
 if (currentMin < 10) {
   currentMin = `0${currentMin}`;
 }
+
+let dayTwo = document.querySelector("#day-two");
+dayTwo.innerHTML = days[now.getDay()+1];
+let dayThree = document.querySelector("#day-three");
+dayThree.innerHTML = days[now.getDay()+2];
+let dayFour = document.querySelector("#day-four");
+dayFour.innerHTML = days[now.getDay()+3];
+let dayFive = document.querySelector("#day-five");
+dayFive.innerHTML = days[now.getDay()+4];
 
 
   let  displayDate = document.querySelector(".current-date-time");
@@ -56,6 +65,29 @@ function showForecast(response) {
   dayFourLow.innerHTML = `${Math.round(response.data.list[31].main.temp_min)}°C`;
   let dayFiveLow = document.querySelector("#day-five-low");
   dayFiveLow.innerHTML = `${Math.round(response.data.list[39].main.temp_min)}°C`;
+
+  let dayOneIcon = document.querySelector("#day-one-icon");
+  dayOneIcon.setAttribute(
+    "src",
+    `http://openweathermap.org/img/wn/${response.data.list[7].weather[0].icon}@2x.png`);
+  let dayTwoIcon = document.querySelector("#day-two-icon");
+  dayTwoIcon.setAttribute(
+    "src",
+    `http://openweathermap.org/img/wn/${response.data.list[15].weather[0].icon}@2x.png`);
+  let dayThreeIcon = document.querySelector("#day-three-icon");
+  dayThreeIcon.setAttribute(
+    "src",
+    `http://openweathermap.org/img/wn/${response.data.list[23].weather[0].icon}@2x.png`);
+  let dayFourIcon = document.querySelector("#day-four-icon");
+  dayFourIcon.setAttribute(
+    "src",
+    `http://openweathermap.org/img/wn/${response.data.list[31].weather[0].icon}@2x.png`);
+  let dayFiveIcon = document.querySelector("#day-five-icon");
+  dayFiveIcon.setAttribute(
+    "src",
+    `http://openweathermap.org/img/wn/${response.data.list[39].weather[0].icon}@2x.png`);
+
+
 
   console.log(response.data.list);
 }
