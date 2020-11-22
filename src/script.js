@@ -43,10 +43,19 @@ function showTemp(response) {
   document.querySelector("#wind-speed").innerHTML = Math.round(response.data.wind.speed);
   document.querySelector("#sunrise").innerHTML = response.data.sys.sunrise;
   document.querySelector("#sunset").innerHTML = response.data.sys.sunset;
+  if (response.data.weather[0].main === "Clouds") {
+    document.querySelector("#summary").style.backgroundImage = "url(src/images/clouds.jpg)";
+  }
   if (response.data.weather[0].main === "Sun") {
     document.querySelector("#summary").style.backgroundImage = "url(src/images/sun.jpg)";
   }
-  if (response.data.weather[0].main === "Rain" || "Drizzle" || "Thunderstorm") {
+  if (response.data.weather[0].main === "Rain") {
+    document.querySelector("#summary").style.backgroundImage = "url(src/images/rain.jpg)";
+  }
+  if (response.data.weather[0].main === "Drizzle") {
+    document.querySelector("#summary").style.backgroundImage = "url(src/images/rain.jpg)";
+  }
+  if (response.data.weather[0].main === "Thunderstorm") {
     document.querySelector("#summary").style.backgroundImage = "url(src/images/rain.jpg)";
   }
   if (response.data.weather[0].main === "Snow") {
@@ -55,7 +64,6 @@ function showTemp(response) {
   if (response.data.weather[0].main === "Clear") {
     document.querySelector("#summary").style.backgroundImage = "url(src/images/clear.jpg)";
   }
-
   console.log(response.data);
 }
 
